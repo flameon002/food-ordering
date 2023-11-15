@@ -1,4 +1,4 @@
-import Header from "./components/layout/Header";
+
 import Hero from "./components/layout/Hero";
 import HomeMenu from "./components/layout/HomeMenu";
 import SecctionHeaders from "./components/layout/SecctionHeaders";
@@ -6,7 +6,6 @@ import SecctionHeaders from "./components/layout/SecctionHeaders";
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <HomeMenu />
 
@@ -29,9 +28,7 @@ export default function Home() {
           <h1>+12 3456 7890</h1>
         </a>
       </section>
-      <footer className="border-t p-8 text-center text-gray-500 mt-16">
-          &copy; 2023 All right reserved
-      </footer>
+
     </>
   );
 }
