@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  background: #bfbfbf;
+}
+
+
+section.hero{
+  @apply grid;
+  grid-template-columns: .4fr .6fr;
+}
