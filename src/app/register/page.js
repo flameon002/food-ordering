@@ -4,12 +4,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const registerPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("test@test.com");
+  const [password, setPassword] = useState("test");
 
-  function handleFormSubmit(ev) {
+  async function handleFormSubmit(ev) {
     ev.preventDefault();
-    fetch('/api/register', {
+    const response = await fetch('/api/register', {
       method: "POST",
       body: JSON.stringify({email, password}),
       headers: {'Content-Type': 'application/json'}
