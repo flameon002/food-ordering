@@ -49,7 +49,7 @@ const [loginInProgres, setLogininProgres] =useState(false)
         <button type="subbmit" 
         // disabled={creatingUser}
         >
-          Register
+          Login
         </button>
 
         <div className="my-4 text-center text-gray-700">
