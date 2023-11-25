@@ -1,38 +1,37 @@
-'use client'
+"use client";
+
 import Image from "next/image";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
-const LoginPage = () => {
 
+
+
+const LoginPage = () => {
   const [email, setEmail] = useState("test@test.com");
   const [password, setPassword] = useState("test");
-const [loginInProgres, setLogininProgres] =useState(false)
+  const [loginInProgres, setLogininProgres] = useState(false);
 
-
-  async function handleFormSubmit(e){
+  async function handleFormSubmit(e) {
     e.preventDefault();
-    setLogininProgres(true)
-    const response = await fetch("/api/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-    if (!response.ok) {
-      
-    }else{
+    setLogininProgres(true);
 
+    await signIn("Credentials", { email, password });
+
+    if (!response.ok) {
+    } else {
     }
-    setLogininProgres(false)
+    setLogininProgres(false);
   }
 
   return (
-    <section className='mt-8'>
+    <section className="mt-8">
       <h1 className="text-center text-primary text-4xl font-semibold mb-4">
         Login
       </h1>
 
-    <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
-    <input
+      <form className="block max-w-xs mx-auto" onSubmit={handleFormSubmit}>
+        <input
           type="email"
           name="email"
           placeholder="Email"
@@ -46,8 +45,9 @@ const [loginInProgres, setLogininProgres] =useState(false)
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="subbmit" 
-        // disabled={creatingUser}
+        <button
+          type="subbmit"
+          // disabled={creatingUser}
         >
           Login
         </button>
@@ -61,14 +61,14 @@ const [loginInProgres, setLogininProgres] =useState(false)
         </button>
 
         <div className="text-center my-4 text-gray-500 border-t pt-4">
-          Don´t have an account?{' '}
-          <Link className="underline" href={'/login'}>Register here &raquo;</Link>
+          Don´t have an account?{" "}
+          <Link className="underline" href={"/login"}>
+            Register here &raquo;
+          </Link>
         </div>
-
-    </form>
-
+      </form>
     </section>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
