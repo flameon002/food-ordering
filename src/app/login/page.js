@@ -8,22 +8,18 @@ import React, { useState } from "react";
 
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("test@test.com");
+  const [email, setEmail] = useState("test@example.com");
   const [password, setPassword] = useState("test");
   const [loginInProgres, setLogininProgres] = useState(false);
 
   async function handleFormSubmit(e) {
     e.preventDefault();
     setLogininProgres(true);
-
-    await signIn("Credentials", { email, password });
-
-    if (!response.ok) {
-    } else {
-    }
+    await signIn('credentials', {email, password,});
+    // callbackUrl: '/'
     setLogininProgres(false);
   }
-
+  
   return (
     <section className="mt-8">
       <h1 className="text-center text-primary text-4xl font-semibold mb-4">
@@ -46,8 +42,7 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
-          type="subbmit"
-          // disabled={creatingUser}
+          type="submit"
         >
           Login
         </button>

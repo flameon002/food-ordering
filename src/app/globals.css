@@ -29,7 +29,7 @@ button{
   @apply border p-2 border-gray-700 rounded-xl px-6 py-2;
 }
 
-button[type="subbmit"], button.submit{
+button[type="submit"], button.submit{
 @apply border-0 bg-primary text-white;
 }
 button[type="submit"]:disabled, .submit:disabled{

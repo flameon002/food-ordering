@@ -5,7 +5,8 @@ import Link from "next/link";
 
 
 const Header = () => {
-  const session = useSession()
+  const  session  = useSession();
+  
   console.log(session);
   return (
     <header className="flex items-center justify-between">
