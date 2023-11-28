@@ -15,7 +15,7 @@ const LoginPage = () => {
   async function handleFormSubmit(e) {
     e.preventDefault();
     setLogininProgres(true);
-    await signIn('credentials', {email, password,});
+    // await signIn('credentials', {email, password,});
     // callbackUrl: '/'
     setLogininProgres(false);
   }
@@ -43,6 +43,8 @@ const LoginPage = () => {
         />
         <button
           type="submit"
+          // onClick={() => signIn()}
+          onClick={() =>  signIn('credentials', {email, password, callbackUrl: '/'})}
         >
           Login
         </button>
